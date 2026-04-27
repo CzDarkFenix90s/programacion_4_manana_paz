@@ -52,6 +52,7 @@ fun main() {
     println("Buscar any    : ${numeros.any { it > 4 }}")
     println("Buscar all    : ${numeros.all { it > 4 }}")
     println("Buscar none : ${numeros.none {it > 10}}")
+    println("Buscar none : ${numeros.none {it > 10}}")
 
-    
+
  }

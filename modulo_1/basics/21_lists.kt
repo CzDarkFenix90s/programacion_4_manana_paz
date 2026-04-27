@@ -21,31 +21,32 @@ fun main() {
         println(fruta)
     }
     
+    
     println("Listas-Mutable")
-    val colores = mutableListOf("blanco", "azul", "amarillo", "rojo")
+    val colores =mutableListOf("blanco", "azul","amarillo","rojo")
     println(colores)
     colores.add("verde")
     println(colores)
-    colores.add(0, "morado")
+    colores.add(0,"morado")
     println(colores)
     colores.remove("verde")
     println(colores)
-    colores[1] = "gris"
+    colores[1]="gris"
     println(colores)
-
-    println("Array deque")
-    val deque = ArrayDeque<Int>()
     
-    println(deque)           
+    
+    
+    println("Array deque")
+    val deque= ArrayDeque<Int>()
+    println(deque)
     deque.addFirst(1)
-    println(deque)           
+    println(deque)
     deque.addLast(2)
-    println(deque)          
+    println(deque)
     deque.addLast(0)
-    println(deque)           
+    println(deque)
     deque.removeFirst()
-    println(deque)      
+    println(deque)
     deque.removeLast()
-    println(deque)           
-}
 
+}
