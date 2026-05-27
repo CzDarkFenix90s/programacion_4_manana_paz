@@ -117,6 +117,6 @@ private fun DemoEstadoDerivado() {
 
 @Preview(showBackground = true)
 @Composable
-fun S06Preview() {
+fun S06_Preview() {
     MaterialTheme { S06EstadoScreen() }
 }

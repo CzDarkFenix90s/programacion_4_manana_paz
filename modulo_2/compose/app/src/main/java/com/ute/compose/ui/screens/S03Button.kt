@@ -81,9 +81,9 @@ fun S03ButtonScreen() {
         // enabled = false → el botón no dispara onClick, apariencia atenuada
         Button(
             onClick  = { },
-            enabled  = true,
+            enabled  = false,
             modifier = Modifier.fillMaxWidth()
-        ) { Text("Deshabilitado (enabled = true)") }
+        ) { Text("Deshabilitado (enabled = false)") }
 
         HorizontalDivider()
 

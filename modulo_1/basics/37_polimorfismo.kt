@@ -28,6 +28,15 @@ class Efectivo : Pagable {
         return true
     }
 }
+class Cheque(val numero: String) : Pagable {
+    override val nombre = "Cheque"
+    override fun procesar(monto: Double): Boolean {
+        println("💵 Recibiendo $${"%.2f".format(monto)} con cheque a $numero")
+        return true
+    }
+}
+
+
 
 // Esta función no sabe ni le importa qué tipo de pago es
 // Solo sabe que recibe algo que implementa Pagable — POLIMORFISMO
@@ -37,13 +46,20 @@ fun cobrar(monto: Double, metodoPago: Pagable) {
     println(if (exito) "✅ Pago exitoso" else "❌ Pago fallido")
 }
 
+
+
 fun main() {
     val metodos: List<Pagable> = listOf(
         TarjetaCredito("**** **** **** 1234"),
         PayPal("ana@test.com"),
-        Efectivo()
+        Efectivo(),
+        Cheque("**** ****111")
     )
 
     // Misma función — comportamiento distinto según el tipo
     metodos.forEach { cobrar(99.99, it) }
+
+    for(page in metodos){
+        println("$page")
+    }
 }

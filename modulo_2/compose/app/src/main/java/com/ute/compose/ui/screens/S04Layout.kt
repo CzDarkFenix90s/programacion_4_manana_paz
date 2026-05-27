@@ -110,6 +110,6 @@ private fun CeldaLayout(label: String, color: Color) {
 
 @Preview(showBackground = true)
 @Composable
-fun S04Preview() {
+fun S04_Preview() {
     MaterialTheme { S04LayoutScreen() }
 }

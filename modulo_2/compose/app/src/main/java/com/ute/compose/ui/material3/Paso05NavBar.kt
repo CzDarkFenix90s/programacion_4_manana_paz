@@ -127,7 +127,7 @@ private fun PantallaContactosContent(
 }
 
 @Composable
-private fun PantallaFavoritosContent(
+fun PantallaFavoritosContent(
     favoritos: List<Contacto>,
     modifier:  Modifier = Modifier
 ) {
@@ -159,7 +159,7 @@ private fun PantallaFavoritosContent(
 }
 
 @Composable
-private fun PantallaPerfilContent(modifier: Modifier = Modifier) {
+fun PantallaPerfilContent(modifier: Modifier = Modifier) {
     Box(modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Icon(Icons.Default.AccountCircle, null, Modifier.size(80.dp),

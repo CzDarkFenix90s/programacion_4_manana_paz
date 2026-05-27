@@ -223,6 +223,6 @@ private fun IndicadorPasos(pasoActual: Int, totalPasos: Int) {
 
 @Preview(showBackground = true)
 @Composable
-fun S08Preview() {
+fun S08_Preview() {
     MaterialTheme { S08BienvenidaScreen() }
 }

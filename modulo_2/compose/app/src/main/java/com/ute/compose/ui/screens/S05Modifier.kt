@@ -59,7 +59,7 @@ fun S05ModifierScreen() {
                 .background(Color(0xFFFFCDD2))    // 1° pinta (sin recorte aún)
                 .clip(RoundedCornerShape(16.dp))  // 2° recorta — tarde para el fondo
                 .padding(12.dp)
-                .clickable { ultimoClick = "Click en Box ❌" },
+                .clickable { ultimoClick = "Click en Background \nantes de \nclick" },
             contentAlignment = Alignment.Center
         ) {
             Text("background\nantes de\nclip ❌",

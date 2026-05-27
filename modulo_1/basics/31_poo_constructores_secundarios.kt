@@ -16,4 +16,5 @@ fun main() {
 
     println(r1)  // Rectángulo(5.0x3.0) | área=15.0
     println(r2)  // Rectángulo(4.0x4.0) | área=16.0
+    println(r3)  // Rectángulo(6.0x2.0) | área=12.0
 }
