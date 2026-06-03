@@ -1,51 +1,28 @@
-# ==========================================
-# General / Sistema Operativo
-# ==========================================
+# ==============================================================================
+# SISTEMA OPERATIVO
+# ==============================================================================
 **/.DS_Store
-**/.AppleDouble
-**/.LSOverride
 **/Thumbs.db
-**/*.log
-**/*.tmp
 **/*.swp
+**/*.bak
+**/desktop.ini
 
-# ==========================================
-# IDEs (VS Code, IntelliJ, Android Studio)
-# ==========================================
-**/.vscode/
-**/.idea/
-**/*.iml
-**/*.iws
-**/.project
-**/.classpath
-**/.settings/
-**/*.sublime-project
-**/*.sublime-workspace
-
-# ==========================================
-# React Native / Node.js
-# ==========================================
+# ==============================================================================
+# REACT NATIVE / NODE.JS
+# ==============================================================================
 **/node_modules/
 **/npm-debug.log*
 **/yarn-debug.log*
 **/yarn-error.log*
-**/.env
-**/.env.local
-**/.env.development.local
-**/.env.test.local
-**/.env.production.local
+**/.expo/
+**/.expo-shared/
+**/web-build/
+**/.metro-cache/
+**/.bundle/
 
-# iOS específico (React Native / Flutter)
-**/ios/Pods/
-**/ios/build/
-**/ios/.xccheckout
-**/ios/*.xcworkspace/xcuserdata/
-**/ios/*.xcodeproj/xcuserdata/
-**/DerivedData/
-
-# ==========================================
-# Flutter
-# ==========================================
+# ==============================================================================
+# FLUTTER / DART
+# ==============================================================================
 **/.dart_tool/
 **/.flutter-plugins
 **/.flutter-plugins-dependencies
@@ -53,25 +30,59 @@
 **/.pub-cache/
 **/.pub/
 **/build/
+**/lib/generated_plugin_registrant.dart
+**/*.g.dart
+**/*.freezed.dart
 
-# ==========================================
-# Android / Kotlin
-# ==========================================
+# ==============================================================================
+# KOTLIN / ANDROID / GRADLE
+# ==============================================================================
 **/.gradle/
-**/local.properties
+**/build/
+**/captures/
 **/*.apk
+**/*.aar
 **/*.ap_
 **/*.aab
-**/*.dex
+**/local.properties
+**/.cxx/
+**/*.so
+**/*.keystore
+**/*.jks
+**/output.json
 
-# Carpetas de compilación de Android (Estructura estándar)
-**/android/app/build/
-**/android/build/
-**/bin/
-**/gen/
-**/out/
+# ==============================================================================
+# IOS / XCODE
+# ==============================================================================
+**/ios/Pods/
+**/ios/.generated/
+**/ios/DerivedData/
+**/*.xcworkspace
+**/xcuserdata/
+**/*.pbxuser
+**/*.mode1v3
+**/*.mode2v3
+**/*.perspectivev3
 
-# Archivos de captura y trazas de depuración
-**/*.stackdump
-**/capture.pcap
-**/*.hprof
+# ==============================================================================
+# IDEs (VS Code, IntelliJ, Android Studio)
+# ==============================================================================
+**/.idea/
+**/*.iml
+**/*.iws
+**/*.ipr
+**/.vscode/
+**/.project
+**/.classpath
+**/.settings/
+
+# ==============================================================================
+# SEGURIDAD Y CONFIGURACIÓN LOCAL
+# ==============================================================================
+**/.env
+**/.env.local
+**/.env.*.local
+**/google-services.json
+**/GoogleService-Info.plist
+**/*.pem
+**/*.key

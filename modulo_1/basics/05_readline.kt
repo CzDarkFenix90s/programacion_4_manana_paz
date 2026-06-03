@@ -1,22 +1,24 @@
 fun main() {
+    // ReadLine
+    println("Escribe tu nombre")
+    val nombre = readLine() ?: "anonimo"
+    println("Nombre includo : $nombre")
     
-    //readline
-    println("Escribe tu nombre : ")
-	val nombre=readLine()
-    println("Nombre incluido : $nombre")
-    
-    println("Escribe apellido : ")
-	val apellido=readLine() ?: "anonimo"
+    println("Escribe Apellido")
+    val apellido = readLine() ?: "anonimo"
     println("Apellido incluido : $apellido")
     
     /*
-    Comentarios multimedia
+    Comentarios multilineas
     */
-    //comentario de una sola linea 
+    
+    //comentarios de una sola linea
+    
     /**
-    *Multilineas
-    *Comentarios
-    *@param nombre del usuario
-    *@return un saludo personalizado
-    */
+    * multilineas
+    * comentarios
+    * @ para nombre de usuario
+    * @return un saludo personalizado
+    
+    **/
 }
