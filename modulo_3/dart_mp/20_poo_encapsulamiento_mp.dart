@@ -1,5 +1,3 @@
-// Ejercicio de consulta dietética
-
 class HistorialAlimenticio {
   double _caloriasTotales;
 
@@ -9,7 +7,7 @@ class HistorialAlimenticio {
 
   void registrarComida(double calorias) {
     if (calorias <= 0) {
-      print('Las calorías deben ser mayores a 0');
+      print('Las calorias deben ser mayores a 0');
       return;
     }
     _caloriasTotales += calorias;
@@ -18,11 +16,11 @@ class HistorialAlimenticio {
 
   void eliminarComida(double calorias) {
     if (calorias <= 0) {
-      print('Las calorías deben ser mayores a 0');
+      print('Las calorias deben ser mayores a 0');
       return;
     }
     if (calorias > _caloriasTotales) {
-      print('No hay suficientes calorías registradas');
+      print('No hay suficientes calorias registradas');
       return;
     }
     _caloriasTotales -= calorias;
@@ -35,5 +33,5 @@ void main() {
 
   historial.registrarComida(450.0);
   historial.eliminarComida(200.0);
-  print('Calorías totales del día: ${historial.caloriasTotales.toStringAsFixed(0)} kcal');
+  print('Calorias totales del dia: ${historial.caloriasTotales.toStringAsFixed(0)} kcal');
 }

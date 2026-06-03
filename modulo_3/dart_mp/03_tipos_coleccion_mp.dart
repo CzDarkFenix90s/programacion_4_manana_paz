@@ -1,45 +1,39 @@
-// Ejercicio de consulta dietética
 void main() {
-  // List — lista ordenada (como List en Kotlin)
-  List<String> alimentos   = ['manzana', 'plátano', 'fresa'];
-  var          numeros  = [1, 2, 3, 4, 5];       // tipo inferido: List<int>
+  List<String> alimentos = ['manzana', 'platano', 'fresa'];
+  var numeros = [1, 2, 3, 4, 5];
 
-  print(alimentos[0]);         // manzana
-  print(alimentos.length);     // 3
+  print(alimentos[0]);
+  print(alimentos.length);
   alimentos.add('aguacate');
-  alimentos.remove('plátano');
+  alimentos.remove('platano');
 
-  // Map — clave → valor (como Map en Kotlin)
   Map<String, int> edades = {
-    'Lucía':   28,
-    'Luis':  34,
-    'María': 25,
+    'Lucia': 28,
+    'Luis': 34,
+    'Maria': 25,
   };
 
-  print(edades['Lucía']);     // 28
-  print(edades['Pedro']);   // null — clave no existe
-  edades['Carlos'] = 40;    // añadir
+  print(edades['Lucia']);
+  print(edades['Pedro']);
+  edades['Carlos'] = 40;
 
-  // Set — sin duplicados (como Set en Kotlin)
-  Set<String> tags = {'dieta', 'nutrición', 'consulta'};
-  tags.add('dieta');      // ignorado — ya existe
-  print(tags.length);       // 3
+  Set<String> tags = {'dieta', 'nutricion', 'consulta'};
+  tags.add('dieta');
+  print(tags.length);
 
-  // Spread operator — para combinar colecciones
   var lista1 = [1, 2, 3];
   var lista2 = [4, 5, 6];
-  var combinada = [...lista1, ...lista2];  // [1, 2, 3, 4, 5, 6]
+  var combinada = [...lista1, ...lista2];
   print(combinada);
 
-  // Collection if — elementos condicionales
   bool mostrarExtra = true;
   var items = [
     'elemento1',
     'elemento2',
-    if (mostrarExtra) 'elemento3',  // solo si la condición es true
+    if (mostrarExtra) 'elemento3',
   ];
+  print(items);
 
-  // Collection for — generar elementos
   var cuadrados = [for (var i = 1; i <= 5; i++) i * i];
-  print(cuadrados);  // [1, 4, 9, 16, 25]
+  print(cuadrados);
 }

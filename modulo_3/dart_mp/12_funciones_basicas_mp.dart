@@ -1,34 +1,27 @@
-// Ejercicio de consulta dietética
-// Sintaxis completa — preferida para funciones públicas
 import 'dart:io';
 
-int sumar(int a, int b) {
-  return a + b;
+int calcularCaloriasMeta(int peso, int factor) {
+  return peso * factor;
 }
 
-// Sintaxis de flecha — cuando el cuerpo es una sola expresión
-int multiplicar(int a, int b) => a * b;
+int calcularCarbohidratos(int calorias, int porcentaje) => ((calorias * porcentaje) ~/ 100) ~/ 4;
 
-// void — cuando no se devuelve nada
-void imprimirSeparador(String titulo) {
-  print('─── $titulo ───');
+void imprimirSeccionDietetica(String titulo) {
+  print('--- CLINICA NUTRICIONAL: $titulo ---');
 }
 
+String formatearPlan(String paciente, int calorias) => 'Paciente: $paciente | Meta: $calorias kcal';
+
+formatearPlanSinTipo(String paciente, int calorias) => 'Paciente: $paciente | Meta: $calorias kcal';
 
 void main() {
-  print(sumar(5, 3));          // 8
-  print(multiplicar(4, 6));    // 24
-  imprimirSeparador('Inicio'); // ─── Inicio ───
-}
-// Dart puede inferir el tipo de retorno, pero es buena práctica declararlo
-// explícitamente en funciones públicas para mejorar la legibilidad.
+  int caloriasTotales = calcularCaloriasMeta(70, 30);
+  int carbohidratosGramos = calcularCarbohidratos(caloriasTotales, 40);
 
-// Con tipo explícito — recomendado
-String formatearPrecio(double precio) => '\$${precio.toStringAsFixed(2)}';
+  imprimirSeccionDietetica('PLAN DIETETICO DIARIO');
+  print('Calorias calculadas: $caloriasTotales kcal');
+  print('Carbohidratos diarios: $carbohidratosGramos g');
 
-// Sin tipo — Dart infiere que retorna String
-formatearPrecioSinTipo(double precio) => '\$${precio.toStringAsFixed(2)}';
-
-void main() {
-  print(formatearPrecio(1299.9));  // $1299.90
+  print(formatearPlan('Lucia Martinez', caloriasTotales));
+  print(formatearPlanSinTipo('Carlos Ruiz', 1800));
 }

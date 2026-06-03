@@ -1,11 +1,9 @@
-// Ejercicio de consulta dietética
-
 abstract class EvaluacionNutricional {
   String get tipo;
   String analizar();
 
   void describir() {
-    print('$tipo → ${analizar()}');
+    print('$tipo -> ${analizar()}');
   }
 }
 
@@ -39,12 +37,12 @@ class EvaluacionMacro extends EvaluacionNutricional {
 
   @override
   String analizar() {
-    return 'Carbs: $carbohidratos g, Proteínas: $proteinas g, Grasas: $grasas g';
+    return 'Carbs: $carbohidratos g, Proteinas: $proteinas g, Grasas: $grasas g';
   }
 }
 
 void main() {
-  final evaluaciones = <EvaluacionNutricional>[ 
+  final evaluaciones = <EvaluacionNutricional>[
     EvaluacionIMC(62.0, 1.65),
     EvaluacionMacro(200, 120, 70),
   ];

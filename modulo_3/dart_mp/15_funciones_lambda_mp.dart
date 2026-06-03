@@ -1,7 +1,5 @@
-// Ejercicio de consulta dietética
-
 void main() {
-  final alimentos = ['Avena', 'Pollo', 'Brócoli', 'Yogur'];
+  final alimentos = ['Avena', 'Pollo', 'Brocoli', 'Yogur'];
 
   final etiquetas = alimentos.map((alimento) => 'Consumir $alimento').toList();
   print(etiquetas);
@@ -16,9 +14,9 @@ void main() {
     final proteinas = gramosProteina * 4;
     return carbohidratos + proteinas;
   };
-  print(calcularEnergia(30.0, 20.0)); // 200.0
+  print(calcularEnergia(30.0, 20.0));
 
-  final ordenarPorCalorias = (double a, double b) => b.compareTo(a);
+  final ordenarPorCalorias = (int a, int b) => b.compareTo(a);
   calorias.sort(ordenarPorCalorias);
-  print(calorias); // orden descendente
+  print(calorias);
 }

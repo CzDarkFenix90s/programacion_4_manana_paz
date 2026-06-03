@@ -1,5 +1,3 @@
-// Ejercicio de consulta dietética
-
 void programarConsulta({
   required String paciente,
   required int edad,
@@ -7,7 +5,7 @@ void programarConsulta({
   int sesiones = 1,
 }) {
   final tipo = exigeControl ? 'control nutricional' : 'consulta inicial';
-  print('$paciente ($edad años) agendó $tipo con $sesiones sesión(es).');
+  print('$paciente ($edad anos) agendo $tipo con $sesiones sesion(es).');
 }
 
 double calcularIMC(double peso, double altura, {bool redondear = false}) {
@@ -21,15 +19,15 @@ String mensajeNutricional(String nombre, {String objetivo = 'mantener peso'}) {
 
 void main() {
   programarConsulta(
-    paciente: 'Lucía',
+    paciente: 'Lucia',
     edad: 28,
     exigeControl: true,
     sesiones: 3,
   );
 
-  print(calcularIMC(62.0, 1.65));      // Resultado real
+  print(calcularIMC(62.0, 1.65));
   print(calcularIMC(62.0, 1.65, redondear: true));
 
   print(mensajeNutricional('Carlos'));
-  print(mensajeNutricional('Sofía', objetivo: 'bajar peso'));
+  print(mensajeNutricional('Sofia', objetivo: 'bajar peso'));
 }

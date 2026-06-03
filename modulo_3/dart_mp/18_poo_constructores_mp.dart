@@ -1,5 +1,3 @@
-// Ejercicio de consulta dietética
-
 class ConsultaNutricional {
   final String paciente;
   final String objetivo;
@@ -15,7 +13,7 @@ class ConsultaNutricional {
 
   ConsultaNutricional.inicial()
       : paciente = 'Nuevo paciente',
-        objetivo = 'Evaluación inicial',
+        objetivo = 'Evaluacion inicial',
         sesiones = 1,
         seguimiento = false;
 
@@ -48,7 +46,7 @@ class ConsultaNutricional {
 
 void main() {
   final consulta1 = ConsultaNutricional(
-    paciente: 'María',
+    paciente: 'Maria',
     objetivo: 'Bajar peso',
     sesiones: 5,
     seguimiento: true,

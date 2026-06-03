@@ -1,5 +1,3 @@
-// Ejercicio de consulta dietética
-
 class PlanNutricional {
   String nombre;
   int caloriasDiarias;
@@ -12,12 +10,12 @@ class PlanNutricional {
 
   @override
   String toString() {
-    return 'PlanNutricional(nombre: $nombre, calorías diarias: $caloriasDiarias)';
+    return 'PlanNutricional(nombre: $nombre, calorias diarias: $caloriasDiarias)';
   }
 }
 
 void main() {
   final plan = PlanNutricional('Control de peso', 1800);
   print(plan);
-  print('Calorías con ajuste +200: ${plan.ajustarCalorias(200)} kcal');
+  print('Calorias con ajuste +200: ${plan.ajustarCalorias(200)} kcal');
 }

@@ -1,5 +1,3 @@
-// Ejercicio de consulta dietética
-
 List<double> transformarComidas(
   List<double> calorias,
   double Function(double) transformacion,
@@ -20,11 +18,11 @@ void main() {
   final calorias = [320.0, 420.0, 150.0, 280.0];
 
   final planDiario = transformarComidas(calorias, (c) => c * 0.9);
-  print(planDiario); // calorías ajustadas
+  print(planDiario);
 
   final altos = calorias.where((c) => c > 300).toList();
-  print(altos); // comidas con más de 300 kcal
+  print(altos);
 
   print('Registro de comidas:');
-  procesarComidas(calorias, (c) => print('Comida: \\$${c.toStringAsFixed(0)} kcal'));
+  procesarComidas(calorias, (c) => print('Comida: ${c.toStringAsFixed(0)} kcal'));
 }

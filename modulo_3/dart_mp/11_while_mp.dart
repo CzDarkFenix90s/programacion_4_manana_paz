@@ -1,10 +1,8 @@
-// Ejercicio de consulta dietética
 import 'dart:io';
 
 void main() {
-  // while — comprueba la condición ANTES de ejecutar
   int paquetes = 0;
-  int buffer   = 1024;  // bytes disponibles
+  int buffer = 1024;
 
   while (buffer > 0) {
     final tamano = buffer > 256 ? 256 : buffer;
@@ -13,14 +11,12 @@ void main() {
     print('Paquete $paquetes: $tamano bytes (restante: $buffer)');
   }
 
-  // do-while — ejecuta AL MENOS UNA VEZ antes de comprobar
   int reintentos = 0;
   bool conexionEstablecida = false;
 
   do {
     reintentos++;
-    print('Intento de conexión #$reintentos...');
-    // Simular que conecta en el 3er intento
+    print('Intento de conexion #$reintentos...');
     if (reintentos == 3) conexionEstablecida = true;
   } while (!conexionEstablecida && reintentos < 5);
 

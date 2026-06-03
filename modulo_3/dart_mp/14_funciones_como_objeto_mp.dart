@@ -1,5 +1,3 @@
-// Ejercicio de consulta dietética
-
 double sumarCalorias(double a, double b) => a + b;
 double restarCalorias(double a, double b) => a - b;
 
@@ -17,11 +15,11 @@ double Function(double) crearAjustePorcentaje(double porcentaje) {
 
 void main() {
   final operacion = sumarCalorias;
-  print(operacion(350.0, 120.0)); // 470.0
+  print(operacion(350.0, 120.0));
 
-  print(aplicarCalculoCalorias(2200.0, 500.0, restarCalorias)); // 1700.0
-  print(aplicarCalculoCalorias(1800.0, 200.0, (a, b) => a + b)); // 2000.0
+  print(aplicarCalculoCalorias(2200.0, 500.0, restarCalorias));
+  print(aplicarCalculoCalorias(1800.0, 200.0, (a, b) => a + b));
 
-  final ajustarPorcentaje = crearAjustePorcentaje(0.10);
-  print(ajustarPorcentaje(1800.0)); // 1980.0
+  final ajustarPorcentaje = crearAjustePorcentaje(10);
+  print(ajustarPorcentaje(1800.0));
 }
