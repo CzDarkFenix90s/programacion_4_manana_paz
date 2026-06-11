@@ -29,6 +29,6 @@ data class Order(
     val total: Double,
     val numItems: Int,
     val items: List<OrderItem>,
-    val createdAt: String,
-    val updatedAt: String,
+    val createdAt: String?,
+    val updatedAt: String?,
 )

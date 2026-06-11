@@ -179,8 +179,9 @@ private fun OrderAdminCard(
 ) {
     val dateFmt   = SimpleDateFormat("dd MMM yyyy", Locale("es"))
     val inputFmt  = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'", Locale.getDefault())
-    val dateStr   = runCatching { dateFmt.format(inputFmt.parse(order.createdAt)!!) }
-        .getOrDefault(order.createdAt.take(10))
+    val dateStr   = order.createdAt?.let { date ->
+        runCatching { dateFmt.format(inputFmt.parse(date)!!) }.getOrDefault(date.take(10))
+    } ?: "—"
 
     Surface(
         onClick = onClick,

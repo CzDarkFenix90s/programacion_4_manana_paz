@@ -60,8 +60,9 @@ fun OrderDetailScreen(
 private fun OrderDetailContent(order: Order, onBack: () -> Unit) {
     val inputFmt  = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'", Locale.getDefault())
     val outputFmt = SimpleDateFormat("dd MMM yyyy · HH:mm", Locale("es"))
-    val dateStr   = runCatching { outputFmt.format(inputFmt.parse(order.createdAt)!!) }
-        .getOrDefault(order.createdAt.take(16))
+    val dateStr   = order.createdAt?.let { date ->
+        runCatching { outputFmt.format(inputFmt.parse(date)!!) }.getOrDefault(date.take(16))
+    } ?: "—"
 
     val isCancelled = order.status == OrderStatus.CANCELLED
     val currentStep = PROGRESS_STEPS.indexOf(order.status).coerceAtLeast(0)

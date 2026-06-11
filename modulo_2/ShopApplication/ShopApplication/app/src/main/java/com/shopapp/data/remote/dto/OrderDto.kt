@@ -29,8 +29,8 @@ data class OrderDto(
     val total:    String,
     @SerializedName("num_items")  val numItems:  Int,
     val items:    List<OrderItemDto>,
-    @SerializedName("created_at") val createdAt: String,
-    @SerializedName("updated_at") val updatedAt: String,
+    @SerializedName("created_at") val createdAt: String?,
+    @SerializedName("updated_at") val updatedAt: String?,
 )
 
 data class AddItemRequestDto(

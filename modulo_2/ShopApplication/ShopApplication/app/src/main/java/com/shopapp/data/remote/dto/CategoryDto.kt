@@ -12,7 +12,7 @@ data class CategoryDto(
     val description: String,
     @SerializedName("is_active")      val isActive:      Boolean,
     @SerializedName("total_products") val totalProducts: Int,
-    @SerializedName("created_at")     val createdAt:     String,
+    @SerializedName("created_at")     val createdAt:     String?,
 )
 
 data class CategoryRequestDto(

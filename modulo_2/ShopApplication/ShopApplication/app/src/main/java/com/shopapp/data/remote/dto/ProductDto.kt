@@ -22,8 +22,8 @@ data class ProductDto(
     val image:       String?,
     @SerializedName("image_url") val imageUrl: String?,
     val category:    CategorySummaryDto?,
-    @SerializedName("created_at") val createdAt: String,
-    @SerializedName("updated_at") val updatedAt: String,
+    @SerializedName("created_at") val createdAt: String?,
+    @SerializedName("updated_at") val updatedAt: String?,
 )
 
 data class ProductRequestDto(

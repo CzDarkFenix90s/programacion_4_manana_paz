@@ -174,9 +174,9 @@ fun OrdersScreen(
 fun OrderCard(order: Order, onClick: () -> Unit) {
     val inputFmt  = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'", Locale.getDefault())
     val outputFmt = SimpleDateFormat("dd MMM yyyy", Locale("es"))
-    val dateStr   = runCatching {
-        outputFmt.format(inputFmt.parse(order.createdAt)!!)
-    }.getOrDefault(order.createdAt.take(10))
+    val dateStr   = order.createdAt?.let { date ->
+        runCatching { outputFmt.format(inputFmt.parse(date)!!) }.getOrDefault(date.take(10))
+    } ?: "—"
 
     Surface(
         onClick        = onClick,

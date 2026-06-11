@@ -7,7 +7,7 @@ data class Category(
     val description: String,
     val isActive: Boolean,
     val totalProducts: Int,
-    val createdAt: String,
+    val createdAt: String?,
 )
 
 data class CategoryPayload(

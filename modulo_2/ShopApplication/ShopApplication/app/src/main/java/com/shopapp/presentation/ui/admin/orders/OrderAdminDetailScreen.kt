@@ -63,10 +63,13 @@ private fun AdminOrderDetailContent(
 ) {
     val inputFmt  = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'", Locale.getDefault())
     val outputFmt = SimpleDateFormat("dd MMM yyyy · HH:mm", Locale("es"))
-    val dateStr   = runCatching { outputFmt.format(inputFmt.parse(order.createdAt)!!) }
-        .getOrDefault(order.createdAt.take(16))
-    val updatedStr = runCatching { outputFmt.format(inputFmt.parse(order.updatedAt)!!) }
-        .getOrDefault(order.updatedAt.take(16))
+    val dateStr   = order.createdAt?.let { date ->
+        runCatching { outputFmt.format(inputFmt.parse(date)!!) }.getOrDefault(date.take(16))
+    } ?: "—"
+
+    val updatedStr = order.updatedAt?.let { date ->
+        runCatching { outputFmt.format(inputFmt.parse(date)!!) }.getOrDefault(date.take(16))
+    } ?: "—"
 
     val taxAmount = order.total - order.total / 1.15
     val subtotal  = order.total - taxAmount

@@ -12,8 +12,8 @@ data class Product(
     val imageUrl: String?,
     val categoryId: Int?,
     val categoryName: String?,
-    val createdAt: String,
-    val updatedAt: String,
+    val createdAt: String?,
+    val updatedAt: String?,
 )
 
 data class ProductPayload(
