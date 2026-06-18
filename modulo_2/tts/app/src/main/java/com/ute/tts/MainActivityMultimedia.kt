@@ -117,13 +117,13 @@ class MainActivityMultimedia : AppCompatActivity() {
             videoView.start()
         }
     }
-/*
 
-    override fun onBackPressed() {
+
+    /*override fun onBackPressed() {
         if (this::webView.isInitialized && webView.canGoBack()) {
             webView.goBack()
         } else {
             super.onBackPressed()
         }
-    }
-}*/
+    }*/
+}
