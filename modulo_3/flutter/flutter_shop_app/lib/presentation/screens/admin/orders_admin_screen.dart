@@ -3,9 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_shop_app/domain/model/order.dart';
 import '../../../theme/app_colors.dart';
 import '../../../core/utils/formatters.dart';
-import '../../domain/model/order.dart';
 import '../../widgets/status_badge.dart';
 import '../../providers/orders_admin_provider.dart';
 import '../../widgets/status_dropdown.dart';
@@ -53,7 +53,6 @@ class _OrdersAdminScreenState extends ConsumerState<OrdersAdminScreen> {
 
     return Column(
       children: [
-        // ── Header ──────────────────────────────────────────
         Container(
           color:   AppColors.surface,
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
@@ -96,8 +95,6 @@ class _OrdersAdminScreenState extends ConsumerState<OrdersAdminScreen> {
             ],
           ),
         ),
-
-        // ── Contenido ─────────────────────────────────────────
         Expanded(
           child: Builder(builder: (_) {
             if (state.isLoading && state.orders.isEmpty) {
@@ -168,8 +165,6 @@ class _OrdersAdminScreenState extends ConsumerState<OrdersAdminScreen> {
   }
 }
 
-// ── OrderAdminCard ────────────────────────────────────────────
-
 class _OrderAdminCard extends StatelessWidget {
   final Order                      order;
   final void Function(OrderStatus) onStatus;
@@ -197,7 +192,6 @@ class _OrderAdminCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Primera fila
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -221,8 +215,6 @@ class _OrderAdminCard extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 10),
-
-            // Preview ítems
             Wrap(
               spacing: 6, runSpacing: 4,
               children: [
@@ -246,8 +238,6 @@ class _OrderAdminCard extends StatelessWidget {
             const SizedBox(height: 10),
             const Divider(height: 1),
             const SizedBox(height: 8),
-
-            // Footer
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
