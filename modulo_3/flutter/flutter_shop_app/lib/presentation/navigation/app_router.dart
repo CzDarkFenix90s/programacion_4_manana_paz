@@ -2,9 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_shop_app/presentation/screens/admin/categories_admin_screen.dart';
 import 'package:flutter_shop_app/presentation/screens/admin/dashboard_screen.dart';
-import 'package:flutter_shop_app/presentation/screens/admin/products_admin_screen.dart';
 import 'package:flutter_shop_app/presentation/screens/auth/profile_screen.dart';
 import 'package:flutter_shop_app/presentation/screens/cart/cart_screen.dart';
 import 'package:flutter_shop_app/presentation/screens/catalog/product_detail_screen.dart';
@@ -35,7 +33,6 @@ class _PlaceholderScreen extends ConsumerWidget {
             tooltip: 'Cerrar sesión',
             icon: const Icon(Icons.logout),
             onPressed: () async {
-              // Cerrar sesión y volver al login
               await ref.read(authProvider.notifier).logout();
               context.go('/login');
             },
@@ -82,7 +79,7 @@ final routerProvider = Provider<GoRouter>((ref) {
             builder: (_, __) => const CatalogScreen(),
             routes: [
               GoRoute(
-                path: ':id', // /catalog/1 → id=1
+                path: ':id', 
                 builder: (_, state) {
                   final id = int.parse(state.pathParameters['id']!);
                   return ProductDetailScreen(productId: id);
@@ -125,34 +122,31 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (_, state) => AdminShell(
           title:        'Categorías',
           currentRoute: state.matchedLocation,
-          child:        const CategoriesAdminScreen(),
+          child:        const _AdminPlaceholder('Categorías — M8'),
         ),
       ),
-
-      
       GoRoute(
         path: '/admin/products',
         builder: (_, state) => AdminShell(
           title:        'Productos',
           currentRoute: state.matchedLocation,
-          child:        const ProductsAdminScreen(),
+          child:        const _AdminPlaceholder('Productos — M9'),
         ),
       ),
       GoRoute(
-        path: '/admin/orders',
+        path:    '/admin/orders',
         builder: (_, state) => AdminShell(
           title:        'Pedidos',
           currentRoute: state.matchedLocation,
-          child:        const _AdminPlaceholder('Pedidos admin — M10'),
+          child:        const _AdminPlaceholder('Pedidos — Admin'),
         ),
       ),
       GoRoute(
-        path: '/admin/orders/:id',
+        path:    '/admin/orders/:id',
         builder: (_, state) => AdminShell(
-          title:        'Detalle pedido',
+          title:        'Detalle pedido #${state.pathParameters['id']}',
           currentRoute: '/admin/orders',
-          child:        _AdminPlaceholder(
-              'Pedido #${state.pathParameters['id']} — M10'),
+          child:        const _AdminPlaceholder('Detalle Pedido — Admin'),
         ),
       ),
       GoRoute(

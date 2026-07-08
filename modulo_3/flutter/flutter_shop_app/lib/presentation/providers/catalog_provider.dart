@@ -38,8 +38,6 @@ class CatalogState {
     this.ordering,
   });
 
-  get selectedCategory => null;
-
   CatalogState copyWith({
     List<Product>? products,
     List<Category>? categories,
