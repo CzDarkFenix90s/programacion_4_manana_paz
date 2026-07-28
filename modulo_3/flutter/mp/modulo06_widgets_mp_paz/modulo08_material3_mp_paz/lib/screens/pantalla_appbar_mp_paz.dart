@@ -1,0 +1,77 @@
+// lib/screens/pantalla_appbar_mp_paz.dart
+import 'package:flutter/material.dart';
+
+class PantallaAppBar extends StatelessWidget {
+  const PantallaAppBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+
+    return Scaffold(
+      body: CustomScrollView(
+        slivers: [
+          // SliverAppBar — colapsa al hacer scroll
+          SliverAppBar.large(
+            title:           const Text('Pacientes'),
+            pinned:          true,
+            backgroundColor: cs.primaryContainer,
+            foregroundColor: cs.onPrimaryContainer,
+            actions: [
+              IconButton(
+                icon:      const Icon(Icons.filter_list),
+                onPressed: () {},
+                tooltip:   'Filtrar',
+              ),
+              IconButton(
+                icon:      const Icon(Icons.search),
+                onPressed: () {},
+                tooltip:   'Buscar',
+              ),
+            ],
+            flexibleSpace: FlexibleSpaceBar(
+              background: Container(
+                color: cs.primaryContainer,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: 56),
+                    Icon(Icons.restaurant, size: 48, color: cs.onPrimaryContainer),
+                    const SizedBox(height: 8),
+                    Text(
+                      '8 pacientes activos',
+                      style: TextStyle(color: cs.onPrimaryContainer),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+
+          // Lista de pacientes
+          SliverPadding(
+            padding: const EdgeInsets.all(8),
+            sliver: SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, i) => Card(
+                  child: ListTile(
+                    leading:  Icon(Icons.restaurant, color: cs.primary),
+                    title:    Text('Unidad 10${i + 1}'),
+                    subtitle: Text('Plan ${i + 40} · En Servicio'),
+                    trailing: Chip(
+                      label:           const Text('OK'),
+                      backgroundColor: cs.primaryContainer,
+                      labelStyle:      TextStyle(color: cs.onPrimaryContainer),
+                    ),
+                    onTap: () {},
+                  ),
+                ),
+                childCount: 10,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
