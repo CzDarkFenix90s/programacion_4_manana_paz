@@ -1,0 +1,76 @@
+import 'package:flutter/material.dart';
+
+class AvatarBadgePaciente extends StatelessWidget {
+  final String nombre;
+  final int    observaciones;
+  final bool   activo;
+
+  const AvatarBadgePaciente({
+    super.key,
+    required this.nombre,
+    required this.observaciones,
+    required this.activo,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      clipBehavior: Clip.none,   // permite que el badge salga del Stack
+      children: [
+        // Avatar — capa inferior
+        Container(
+          width:  56,
+          height: 56,
+          decoration: BoxDecoration(
+            color:        activo ? Colors.indigo.shade100 : Colors.grey.shade200,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Center(
+            child: Icon(
+              nombre.toLowerCase().contains('bus') 
+                  ? Icons.restaurant 
+                  : nombre.toLowerCase().contains('plan') 
+                      ? Icons.menu_book 
+                      : nombre.toLowerCase().contains('terminal') 
+                          ? Icons.business 
+                          : Icons.directions_transit,
+              size: 28,
+              color: activo ? Colors.indigo : Colors.grey,
+            ),
+          ),
+        ),
+
+        // Punto de estado — esquina inferior derecha
+        Positioned(
+          bottom: 0, right: 0,
+          child: Container(
+            width:  14,
+            height: 14,
+            decoration: BoxDecoration(
+              color:  activo ? Colors.green : Colors.red,
+              shape:  BoxShape.circle,
+              border: Border.all(color: Colors.white, width: 2),
+            ),
+          ),
+        ),
+
+        // Badge de observaciones — capa superior, solo si las hay
+        if (observaciones > 0)
+          Positioned(
+            top: -4, right: -4,
+            child: Container(
+              padding:     const EdgeInsets.all(4),
+              decoration:  const BoxDecoration(color: Colors.orange, shape: BoxShape.circle),
+              constraints: const BoxConstraints(minWidth: 18, minHeight: 18),
+              child: Text(
+                observaciones > 9 ? '9+' : '$observaciones',
+                style: const TextStyle(
+                    color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
+      ],
+    );
+  }
+}
